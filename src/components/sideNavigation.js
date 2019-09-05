@@ -23,14 +23,14 @@ const TopNavigation = () => {
                           <ul>
                             <li><a href="/postjob">Post a Job</a></li>
 							<li><a href="/managejobs">Manage Jobs <span className="nav-tag">3</span></a></li>
-							<li><a href="/managebidders">Manage Bidders</a></li>
+							{/* <li><a href="/managebidders">Manage Bidders</a></li> */}
                           </ul>	
                         </li>
                         <li ><a href="#"><i className="icon-material-outline-assignment" /> Contributor</a>
                           <ul>
                             <li><a href="/managetasks">Manage Tasks <span className="nav-tag">2</span></a></li>
 							<li><a href="/browsejobs">Browse Jobs</a></li> 
-                            <li><a href="dashboard-my-active-bids.html">My Active Bids <span className="nav-tag">4</span></a></li>
+                            <li><a href="/myactivebids">My Active Bids <span className="nav-tag">4</span></a></li>
                           </ul>	
                         </li>
                       </ul>
