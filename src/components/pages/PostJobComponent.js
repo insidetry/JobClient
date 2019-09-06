@@ -24,31 +24,46 @@ class PostJobComponent extends Component
     constructor(props) {
         super(props);
         this.state = {
-          items: [],
-          fname: 'Umesh'
+          //items: [],
+           fname: '' ,
+          businessunit: '',
+          rewards: '',
+          startdate:'',
+          enddate:'',
+          bidenddate: '',
+          description: ''
         }
     }
 
     onSubmit = (e) => {
-      e.preventDefault();
-      alert("Hi")
-      // get our form data out of state
-      const { fname, lname, email } = this.state;
+      let data = JSON.stringify({
+        name: this.state.fname,
+        description: this.state.description,
+        rewards: this.state.rewards
+    })
 
-      axios.post(API, { fname, lname, email })
+      axios.post(API, data)
         .then((result) => {
-          //alert(fname)
-          //access the results here....
+          window.location = "/managejobs";
         });
+
+        e.preventDefault();
     }
 
     onChange = (e) => {
-      /*
-        Because we named the inputs to match their
-        corresponding values in state, it's
-        super easy to update the state
-      */
-      this.setState({ [e.target.name]: e.target.value });
+      //alert(e.target.name);
+      if(e.target.name == 'fname')
+       {
+          this.setState({ fname: e.target.value });
+       }
+       else if(e.target.name == 'description')
+       {
+        this.setState({ description: e.target.value });
+       }
+       else if(e.target.name == 'rewards')
+       {
+        this.setState({ rewards: e.target.value });
+       }
     }
 
     componentDidMount(){ 
@@ -70,7 +85,7 @@ class PostJobComponent extends Component
 
 
     render() {
-      const { fname, lname, email } = this.state;
+     
    
       return    (
         <form onSubmit={this.onSubmit}>
@@ -98,7 +113,7 @@ class PostJobComponent extends Component
                   <div className="col-xl-4">
                     <div className="submit-field">
                       <h5>Project Name</h5>
-                      <input type="text" className="with-border" value={fname} placeholder="e.g. build me a website" />
+                      <input type="text" className="with-border" name='fname' value={this.state.fname} onChange={this.onChange}  placeholder="e.g. build me a website" />
                     </div>
                   </div>
                   <div className="col-xl-4">
@@ -122,7 +137,7 @@ class PostJobComponent extends Component
                       <h5>Rewards </h5>
                       <div >
                         <div id="autocomplete-container">
-                          <input id="autocomplete-input" className="with-border" type="text"  />
+                          <input id="autocomplete-input" className="with-border" type="text" name='rewards' value={this.state.rewards} onChange={this.onChange} />
                         </div>
                         
                       </div>
@@ -151,7 +166,7 @@ class PostJobComponent extends Component
                       
                     </div>
                   </div>
-                  <div className="col-xl-6">
+                  {/* <div className="col-xl-6">
                     <div className="submit-field">
                       <h5>What skills are required? <i className="help-icon" data-tippy-placement="right" title="Up to 5 skills that best describe your project" /></h5>
                       <div className="keywords-container">
@@ -159,15 +174,15 @@ class PostJobComponent extends Component
                           <input type="text" className="keyword-input with-border" placeholder="Add Skills" />
                           <button className="keyword-input-button ripple-effect"><i className="icon-material-outline-add" /></button>
                         </div>
-                        <div className="keywords-list">{/* keywords go here */}</div>
+                        <div className="keywords-list"></div>
                         <div className="clearfix" />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="col-xl-12">
                     <div className="submit-field">
                       <h5>Describe Your Project</h5>
-                      <textarea cols={30} rows={5} className="with-border" defaultValue={""} />
+                      <textarea cols={30} rows={5} className="with-border" defaultValue={""} name='description' value={this.state.description}  onChange={this.onChange}/>
                       <div className="uploadButton margin-top-30">
                         <input className="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple />
                         <label className="uploadButton-button ripple-effect" htmlFor="upload">Upload Files</label>
