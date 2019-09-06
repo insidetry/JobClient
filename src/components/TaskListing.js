@@ -4,7 +4,7 @@ import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, M
 import src1 from '../assets/img-1.jpg';
 import $ from 'jquery'; 
 
-const API = "https://my-json-server.typicode.com/insidetry/JobServer/tasks";
+const API = "https://my-json-server.typicode.com/insidetry/JobServer/myassignements";
 var jsonResponse;
 
 class TaskListing extends Component
@@ -52,12 +52,12 @@ class TaskListing extends Component
                       </a> */}
           {/* Details */}
           <div className="job-listing-description">
-            <h3 className="job-listing-title"><a href="#"> {item.title}</a> <span className="dashboard-status-button green">{item.status}}</span></h3>
+            <h3 className="job-listing-title"><a href="#"> {item.Name}</a> <span className="dashboard-status-button green">{item.Status}}</span></h3>
             {/* Job Listing Footer */}
             <div className="job-listing-footer">
               <ul>
-                <li><i className="icon-material-outline-date-range" /> Posted on {item.posted}}</li>
-                <li><i className="icon-material-outline-date-range" /> Expiring {item.expiring}</li>
+                <li><i className="icon-material-outline-date-range" /> Posted on {item.StartDate}</li>
+                <li><i className="icon-material-outline-date-range" /> Expiring {item.EndDate}</li>
               </ul>
             </div>
           </div>

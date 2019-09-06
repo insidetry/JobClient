@@ -4,7 +4,7 @@ import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, M
 
 import $ from 'jquery'; 
 
-const API = "https://my-json-server.typicode.com/insidetry/JobServer/tasks";
+const API = "https://my-json-server.typicode.com/insidetry/JobServer/myposting";
 var jsonResponse;
 
 class JobsList extends Component
@@ -48,11 +48,11 @@ class JobsList extends Component
         <div className="job-listing-details">
           {/* Details */}
           <div className="job-listing-description">
-            <h3 className="job-listing-title"><a href="/jobdescription/2">Design a Landing Page</a> <span className="dashboard-status-button yellow">Expiring</span></h3>
+            <h3 className="job-listing-title"><a href="/jobdescription/2"  >{item.Name}</a> <span className="dashboard-status-button yellow">{item.Status}</span></h3>
             {/* Job Listing Footer */}
             <div className="job-listing-footer">
               <ul>
-                <li><i className="icon-material-outline-access-time" /> 23 hours left</li>
+                <li><i className="icon-material-outline-access-time" /> Posted on {item.StartDate}</li>
               </ul>
             </div>
           </div>
@@ -60,13 +60,13 @@ class JobsList extends Component
       </div>
       {/* Task Details */}
       <ul className="dashboard-task-info">
-        <li><strong>3</strong><span>Bids</span></li>
-        <li><strong>$22</strong><span>Avg. Bid</span></li>
-        <li><strong>$15 - $30</strong><span>Hourly Rate</span></li>
+        <li><strong>1</strong><span>Bids</span></li>
+        <li><strong>{item.LastDate}</strong><span>Bid End Date</span></li>
+        <li><strong>{item.Rewards}</strong><span>Rewards</span></li>
       </ul>
       {/* Buttons */}
       <div className="buttons-to-right always-visible">
-        <a href="/managebidders/2" className="button ripple-effect"><i className="icon-material-outline-supervisor-account" /> Manage Bidders <span className="button-info">3</span></a>
+        <a href="/managebidders/{item.id}" className="button ripple-effect"><i className="icon-material-outline-supervisor-account" /> Manage Bidders <span className="button-info">3</span></a>
         <a href="#" className="button gray ripple-effect ico" title="Edit" data-tippy-placement="top"><i className="icon-feather-edit" /></a>
         <a href="#" className="button gray ripple-effect ico" title="Remove" data-tippy-placement="top"><i className="icon-feather-trash-2" /></a>
       </div>

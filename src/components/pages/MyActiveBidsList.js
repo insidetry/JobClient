@@ -4,7 +4,7 @@ import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, M
 
 import $ from 'jquery'; 
 
-const API = "https://my-json-server.typicode.com/insidetry/JobServer/tasks";
+const API = "https://my-json-server.typicode.com/insidetry/JobServer/myassignmentsbids";
 var jsonResponse;
 
 class MyActiveBidsList extends Component
@@ -48,7 +48,7 @@ class MyActiveBidsList extends Component
         <div className="job-listing-details">
           {/* Details */}
           <div className="job-listing-description">
-            <h3 className="job-listing-title"><a href="/jobdescription/2">Design a Landing Page</a> <span className="dashboard-status-button yellow">By - Adam Smith</span></h3>
+            <h3 className="job-listing-title"><a href="/jobdescription/2">{item.Name}</a> <span className="dashboard-status-button yellow">By {item.TaskOwner}}</span></h3>
             {/* Job Listing Footer */}
             <div className="job-listing-footer">
               <ul>
@@ -60,9 +60,9 @@ class MyActiveBidsList extends Component
       </div>
       {/* Task Details */}
       <ul className="dashboard-task-info">
-        <li><strong>3</strong><span>Bids</span></li>
-        <li><strong>$22</strong><span>Avg. Bid</span></li>
-        <li><strong>$15 - $30</strong><span>Hourly Rate</span></li>
+        <li><strong>1</strong><span>Bids</span></li>
+        <li><strong>{item.BidStatus}</strong><span>Status</span></li>
+        <li><strong>{item.TaskOwner}</strong><span>Owner</span></li>
       </ul>
       {/* Buttons */}
       <div className="buttons-to-right always-visible">

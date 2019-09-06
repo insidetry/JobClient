@@ -118,6 +118,12 @@
 /* ---------------------------------- */
 /* Forms Reset & Styles
 ------------------------------------- */
+body {
+	/* -moz-transform: scale(0.8, 0.8); Moz-browsers */
+	/* transform: scale(0.9, 1); Moz-browsers */
+    /* zoom: 0.8; /* Other non-webkit browsers */
+    /* zoom: 80%; Webkit browsers */ 
+}
 input,
 input[type="text"],
 input[type="password"],
@@ -269,6 +275,11 @@ a:focus,
 a:hover { text-decoration: none; color: #333;}
 img { max-width: 100%; }
 
+
+#content {
+    margin-left: 280px;
+    margin-top: 150px;
+}
 
 /* ---------------------------------- */
 /* Header

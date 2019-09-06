@@ -10,7 +10,7 @@ const ManageBiddersPage =  () => {
                 {/* Dashboard Headline */}
                 <div className="dashboard-headline">
                   <h3>Manage Bidders</h3>
-                  <span className="margin-top-7">Bids for <a href="#">Food Delivery Mobile Application</a></span>
+                  <span className="margin-top-7">Bids for <a href="#">Job Posted</a></span>
                  
                 </div>
                 {/* Row */}

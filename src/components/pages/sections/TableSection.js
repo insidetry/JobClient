@@ -10,30 +10,22 @@ const TableSection = () => {
                     <MDBTable hover>
                       <MDBTableHead color="blue-grey lighten-4">
                         <tr>
-                          <th>#</th>
-                          <th>First</th>
-                          <th>Last</th>
-                          <th>Handle</th>
+                          <th>Recommended Task</th>
+
                         </tr>
                       </MDBTableHead>
                       <MDBTableBody>
                         <tr>
-                          <td>1</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <td>Autosys setup for FX system </td>
+                        
                         </tr>
                         <tr>
-                          <td>2</td>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
+                          <td>SQL configurtion for equities</td>
+                          
                         </tr>
                         <tr>
-                          <td>3</td>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
+                          <td>.net upgrade from 4.6 to 4.7</td>
+                         
                         </tr>
                       </MDBTableBody>
                     </MDBTable>
